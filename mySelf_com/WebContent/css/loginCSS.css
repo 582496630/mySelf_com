@@ -1,0 +1,84 @@
+@CHARSET "UTF-8";
+
+.div {
+	font-family: 黑体;
+	font-size: 18px;
+	width: 400px;
+	hight: 300px;
+	text-align: center;
+	margin-top: 16%;
+	margin-left: 20%;
+
+}
+
+.h3 {
+	font-size: 15px;
+	font-family: 楷体;
+	color: red;
+}
+
+.p1 {
+	font-family: 楷体;
+	font-size: 15px;
+	color: red;
+	font-weight: bold;
+}
+
+.p2 {
+	font-family: 华文行楷;
+	font-size: 40px;
+	color: #5ebb00;
+	font-weight: bold;
+	text-align: center;
+}
+
+.p4 {
+	font-family: 华文行楷;
+	font-size: 40px;
+	color: #5ebb00;
+	font-weight: bold;
+	text-align: center;
+}
+
+.span1 {
+	font-family: 宋体;
+	font-size: 20px;
+	color: #0080ff;
+	font-weight: bold;
+	text-align: left;
+}
+
+.span2 {
+	font-family: 宋体;
+	font-size: 20px;
+	color: #18875a;
+	font-weight: bold;
+	text-align: left;
+}
+.beijing1{
+background-image:url(../img/firstpage.jpg);
+	text-align: center;
+	margin-top: 16%;
+	margin-left: 9%;
+    font-family: 华文行楷;
+	font-size: 40px;
+	color:#ff00ff;
+text-align:center;
+}
+
+.divOut {
+	margin-top: 16%;
+	margin-left: 8%;
+	line-height: 40px;
+	font-family: 华文行楷;
+	font-size: 40px;
+	color: #5ebb00;
+	font-weight: bold;
+	text-align: center;
+	
+}
+.div2{
+	margin-top: 20%;
+	margin-left: 5%;
+	
+}
