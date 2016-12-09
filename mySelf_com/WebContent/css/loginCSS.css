@@ -18,8 +18,12 @@
 }
 
 .p1 {
-	font-family: 楷体;
-	font-size: 15px;
+	margin-top: 16%;
+	margin-left: 0%;
+	font-family: 华文行楷;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
 	color: red;
 	font-weight: bold;
 }

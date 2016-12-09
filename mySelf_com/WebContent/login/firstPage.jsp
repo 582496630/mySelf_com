@@ -18,7 +18,7 @@
 <p>可以点击
 <a href="login.jsp">登录</a>进入系统
 </p>
-<p>用户名：tianmai  密码：1234</p>
+<p>用户名：周游   密码：1234</p>
 </div>
 <%
 response.setHeader("refresh", "1");

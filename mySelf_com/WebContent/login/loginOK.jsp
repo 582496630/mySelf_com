@@ -16,7 +16,7 @@
 		String userid = (String) session.getAttribute("userid");
 		if (null != userid) {
 	%>
-	<span class="span1"> 欢迎<%=session.getAttribute("userid")%>；
+	<span class="span1"> 欢迎     <%=session.getAttribute("userid")%>；
 	</span>
 	<span class="span2">点击&nbsp;<a href="loginOut.jsp">注销</a></span>
 
@@ -25,7 +25,7 @@
 		} else {
 			%>
 	<p class="p1">
-		请先进行系统的<a href="login.jsp"></a>登陆
+		请先进行系统的<a href="login.jsp">登陆</a>
 	</p>
 	<% 
 		}
