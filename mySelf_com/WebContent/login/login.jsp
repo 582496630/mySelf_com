@@ -26,7 +26,7 @@ $(document).ready(function(){
 		<img src="../img/bluesky.jpg" width="100%" height="100%" />
 	</div>
 	<div class="div">
-		<form action="login.jsp" method="post">
+		<form action="<%=request.getContextPath() %>/servlet/Login" method="post">
 			<table class="table" >
 				<tr style="	line-height: 60px;">
 					<td colspan="2"><span>用户名：</span> <input id="text" name="username"
@@ -35,9 +35,10 @@ $(document).ready(function(){
 				</tr>
 				<tr style="	line-height: 60px;">
 					<td colspan="2"><span>密&nbsp; 码：</span> <input name="password"
-						type="text" title="请输入密码" style="height: 30px;width: 200px;
+						type="password" title="请输入密码" style="height: 30px;width: 200px;
 						background-color: #03a2a5;border-color: #484244;" /></td>
 				</tr>
+     
 				<tr   style="line-height: 0px;font-size: 6px;
 				font-family: 楷体;color: red;font-weight: bold;"><td id="pwdtd"></td></tr>
 				<tr style="	line-height: 60px;">
@@ -48,6 +49,14 @@ $(document).ready(function(){
 				</tr>
 			</table>
 		</form>
+		
+		
+		
+		
+		
+		
+	
+	<%-- 用jsp方式控制登陆的用户名与密码；现改为用servlet的方法
 		<%
 			//用户名：天霾    密码：1234
 			String name = request.getParameter("username");
@@ -79,7 +88,7 @@ $(document).ready(function(){
 		<%
 		}
 						
-	%>
+	%>  --%>
 	</div>
 </body>
 </html>

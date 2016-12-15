@@ -9,7 +9,7 @@
 </head>
 <body >
 <%
-response.setHeader("refresh", "3;url=loginOK.jsp");//定时跳转
+response.setHeader("refresh", "3;url=../login/loginOK.jsp");//定时跳转
 String userid = (String) session.getAttribute("userid");
 %>
 	<div 

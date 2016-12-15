@@ -7,19 +7,21 @@
 <title>欢迎您</title>
 <link type="text/css" rel="stylesheet" href="../css/loginCSS.css">
 </head>
-<body >
-<div 
+<body>
+	<div
 		style="position: absolute; z-index: -1; width: 100%; height: 100%; top: 0px; left: 0px;">
 		<img src="../img/pingzi.jpg" width="100%" height="100%" />
-		</div>
+	</div>
 	<%
 		String userid = (String) session.getAttribute("userid");
 		if (null != userid) {
 	%>
-	<span class="span1"> 欢迎     <%=session.getAttribute("userid")%>；
+	<span class="span1"> 欢迎 <%=session.getAttribute("userid")%>；
 	</span>
 	<span class="span2">点击&nbsp;<a href="loginOut.jsp">注销</a></span>
-
+	<p>
+	<a  href="../resume/resume.html">个人简历</a>
+     </p>
 
 	<% 
 		} else {
@@ -30,7 +32,7 @@
 	<% 
 		}
 	%>
-
+	<br/>
 
 
 

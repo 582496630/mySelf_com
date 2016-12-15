@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+
+.input1 {
+	/* 按钮背景为透明 */
+	background-color: transparent;
+	/* 按钮没有边框 */
+	border: none;
+	display: block;
+	width: 100px;
+	height: 50px;
+	word-break: normal;
+	text-align: center;
+	font-family: 楷体;
+	font-size: 20px;
+	color:blue
+}
+
+.input2 {
+	/* 按钮背景为透明 */
+	background-color: transparent;
+	border: none;
+	display: block;
+	width: 180px;
+	height: 50px;
+	text-align: center;
+	font-family: 楷体;
+	font-size: 20px;
+}
+
+.input3 {
+	/* 让背景按钮透明 */
+	background-color: transparent;
+	border: none;
+	display: block;
+	width: 364px;
+	height: 50px;
+	text-align: center;
+	font-family: 楷体;
+	font-size: 20px;
+}
+
+.Resume {
+	/* 简历body背景 */ background-image:url(../img/luohua.jpg);
+	
+}
+
+.divResume {
+	margin: 0 25%;
+	text-align: center;
+	font-family: 楷体;
+	font-size: 17px;
+}
