@@ -9,7 +9,7 @@
  <script type="text/javascript"
 	src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 </head>
-<body onload="time()">
+<body >
 
 
 
@@ -21,20 +21,21 @@
 
 	//获得显示时间的div
 	
-	var now = new Date();
 
 	
 	//等待一秒钟后调用time方法，由于settimeout在time方法内，所以可以无限调用
 
 
 function time() {
+	var now = new Date();
 	
 $("#showtime").html("现在时间：" + now.getFullYear() + "年"
 		+ (now.getMonth() + 1) + "月" + now.getDate() + "日"
 		+ now.getHours() + "时" + now.getMinutes() + "分"
 		+ now.getSeconds() + "秒");
-setTimeout(time, 1000);
+window.setTimeout("time()", 1000);
 }
+window.onload = time;
 </script>
 </body>
 </html>

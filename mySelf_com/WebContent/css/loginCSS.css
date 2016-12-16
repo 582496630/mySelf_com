@@ -1,6 +1,22 @@
 @CHARSET "UTF-8";
 
-.div {
+.firstPageBody1{
+background-image:url(../img/1.jpg);
+	text-align: center;
+	margin-top: 16%;
+	margin-left: 5%;
+    font-family: 华文行楷;
+	font-size: 40px;
+	color:#a36f5c;
+}
+.firstPageDiv2{	
+	margin-top: 15%;
+	color:#8000ff;
+	font-family:楷体;
+	font-size: 20px;
+}
+
+.loginDiv1 {
 	font-family: 黑体;
 	font-size: 18px;
 	width: 400px;
@@ -8,16 +24,41 @@
 	text-align: center;
 	margin-top: 16%;
 	margin-left: 20%;
-
+}
+.loginInput{
+	height: 30px;
+	width: 200px;
+	background-color: #03a2a5;
+	border-color: #484244;
 }
 
-.h3 {
-	font-size: 15px;
-	font-family: 楷体;
-	color: red;
+.login2Div{
+	margin-top: 19%;
+	font-family: 华文行楷;
+	font-size: 40px;
+	color: #5ebb00;
+	font-weight: bold;
+	text-align: center;
+}
+.loginFailBody{
+	font-family: 华文行楷;
+	font-size: 40px;
+	color: #ff0080;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 25%;
+	
 }
 
-.p1 {
+.loginOKSpan1 {
+	font-family: 宋体;
+	font-size: 20px;
+	color: #0080ff;
+	font-weight: bold;
+	text-align: left;
+}
+
+.loginOKp {
 	margin-top: 16%;
 	margin-left: 0%;
 	font-family: 华文行楷;
@@ -28,61 +69,18 @@
 	font-weight: bold;
 }
 
-.p2 {
-	font-family: 华文行楷;
-	font-size: 40px;
-	color: #5ebb00;
-	font-weight: bold;
-	text-align: center;
-}
 
-.p4 {
-	font-family: 华文行楷;
-	font-size: 40px;
-	color: #5ebb00;
-	font-weight: bold;
-	text-align: center;
-}
 
-.span1 {
-	font-family: 宋体;
-	font-size: 20px;
-	color: #0080ff;
-	font-weight: bold;
-	text-align: left;
-}
 
-.span2 {
-	font-family: 宋体;
-	font-size: 20px;
-	color: #18875a;
-	font-weight: bold;
-	text-align: left;
-}
-.beijing1{
-background-image:url(../img/firstpage.jpg);
-	text-align: center;
-	margin-top: 16%;
-	margin-left: 9%;
-    font-family: 华文行楷;
-	font-size: 40px;
-	color:#ff00ff;
-text-align:center;
-}
 
-.divOut {
-	margin-top: 16%;
-	margin-left: 8%;
-	line-height: 40px;
-	font-family: 华文行楷;
-	font-size: 40px;
-	color: #5ebb00;
-	font-weight: bold;
-	text-align: center;
-	
-}
-.div2{
-	margin-top: 20%;
-	margin-left: 5%;
-	
-}
+
+
+
+
+
+
+
+
+
+
+

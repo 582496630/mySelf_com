@@ -44,10 +44,10 @@ public class Login extends HttpServlet {
 			rd.forward(request, response);
 			
 		}else {
-			RequestDispatcher rd = request.getRequestDispatcher("/login/login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/login/loginFail.jsp");
 			rd.include(request, response);
+			
 		}
-		
 	}
 	 
 	/**

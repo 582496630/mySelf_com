@@ -7,17 +7,17 @@
 <title>跳转页面</title>
 <link type="text/css" rel="stylesheet" href="../css/loginCSS.css">
 </head>
-<body >
+<body  class="loginFailBody">
 <%
 response.setHeader("refresh", "3;url=../login/loginOK.jsp");//定时跳转
-String userid = (String) session.getAttribute("userid");//把获取的用户名放在变量userid中
+String userid = (String) session.getAttribute("userid");
 %>
 	<div 
 		style="position: absolute; z-index: -1; width: 100%; height: 100%; top: 0px; left: 0px;">
-		<img src="../img/he.jpg" width="100%" height="100%" />
-		</div>
-<div class="login2Div">
-<p >欢迎登录<%=session.getAttribute("userid")%>个人系统</p>
+		<img src="../img/firstpage.jpg" width="100%" height="100%" />
+		</div> 
+<div>
+<span >登陆失败！点击重新<a href="../login/login.jsp">登陆</a></span>
 </div>
 
 </body>
