@@ -13,11 +13,7 @@
 		<img src="../img/pingzi.jpg" width="100%" height="100%" />
 	</div>
 
-	<%
-		//获取Login.java中的userid属性值及登陆时候的用户名，并进行判断，为了不让用户在没有登陆的时候直接打开这个页面
-		String userid = (String) session.getAttribute("userid");
-		if (null != userid) {
-	%>
+
 	<p class="loginOKSpan1">
 		欢迎
 		<%=session.getAttribute("userid")%>； <span style="color: #18875a;">点击&nbsp;<a
@@ -27,16 +23,6 @@
 		<a href="../resume/resume.html">个人简历</a>
 	</p>
 
-	<%
-		//判断如果userid为空则跳转到登录页面
-		} else {
-	%>
-	<p class="loginOKp">
-		请先进行系统的<a href="login.jsp">登陆</a>
-	</p>
-	<%
-		}
-	%>
 
 </body>
 </html>

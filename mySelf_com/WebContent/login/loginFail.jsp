@@ -9,15 +9,14 @@
 </head>
 <body  class="loginFailBody">
 <%
-response.setHeader("refresh", "3;url=../login/loginOK.jsp");//定时跳转
-String userid = (String) session.getAttribute("userid");
+response.setHeader("refresh", "3;url=../login/login.jsp");//定时跳转
 %>
 	<div 
 		style="position: absolute; z-index: -1; width: 100%; height: 100%; top: 0px; left: 0px;">
 		<img src="../img/firstpage.jpg" width="100%" height="100%" />
 		</div> 
 <div>
-<span >登陆失败！点击重新<a href="../login/login.jsp">登陆</a></span>
+<span >登陆失败！请重新登陆</span>
 </div>
 
 </body>

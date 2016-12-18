@@ -38,14 +38,15 @@ public class Login extends HttpServlet {
 		session.setAttribute("userid", name);
 		
 		String pwd = request.getParameter("password");
+		session.setAttribute("userpwd", pwd);
+		
 		if("周游".equals(name)&&"123456".equals(pwd)){
 			ServletContext context = getServletContext();
 			RequestDispatcher rd =   context.getRequestDispatcher("/login/login2.jsp");
 			rd.forward(request, response);
-			
 		}else {
 			RequestDispatcher rd = request.getRequestDispatcher("/login/loginFail.jsp");
-			rd.include(request, response);
+			rd.forward(request, response);
 			
 		}
 	}
