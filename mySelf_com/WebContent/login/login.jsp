@@ -58,7 +58,15 @@
 		<script type="text/javascript">
 			$("#pwdtd").append("请输入用户名与密码！")
 		</script>
-
+		
+<%
+//计算当前用户登录数量
+String userid= request.getParameter("username");
+if(!(userid ==null || "".equals(userid))){
+	session.setAttribute("userid", userid);
+	//response.sendRedirect("./OnlineUserList1_List.jsp");
+}
+%>
 
 		<%-- 用jsp方式控制登陆的用户名与密码；现改为用servlet的方法
 		<%
