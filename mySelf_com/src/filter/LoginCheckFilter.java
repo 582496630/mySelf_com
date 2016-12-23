@@ -23,7 +23,7 @@ import javax.servlet.http.HttpSession;
 				DispatcherType.INCLUDE, 
 				DispatcherType.ERROR
 		},
-					urlPatterns = {"/login/loginOK.jsp","/resume/resume.html","/login/login2.jsp"}, 
+					urlPatterns = {"/login/loginOK.jsp","/resume/resume.html","/login/login2.jsp"},
 							servletNames = { "Login" })
 public class LoginCheckFilter implements Filter {
 

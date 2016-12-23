@@ -8,6 +8,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionEvent;
@@ -38,8 +39,11 @@ public class OnlineUserListListener implements ServletContextListener, HttpSessi
      * @see HttpSessionAttributeListener#attributeAdded(HttpSessionBindingEvent)
      */
     public void attributeAdded(HttpSessionBindingEvent arg0)  { 
+    	//HttpSession session = arg0.getSession();
+    	
     	Set all = (Set)this.app.getAttribute("online");
-        String name = (String)arg0.getValue();
+       // String name = (String)arg0.getValue();
+      String name =  (String) arg0.getSession().getAttribute("userid");
         //有下面的语句，获取的用户名会乱码
        /*try {
 			name = new String(name.getBytes("ISO-8859-1"), "UTF-8");
@@ -67,7 +71,7 @@ public class OnlineUserListListener implements ServletContextListener, HttpSessi
 Set all = (Set)this.app.getAttribute("online");
     	
     	if (all.size()>0) {
-    		all.remove(arg0.getSession().getAttribute("username"));
+    		all.remove(arg0.getSession().getAttribute("userid"));
 		}
         this.app.setAttribute("online", all);
     }

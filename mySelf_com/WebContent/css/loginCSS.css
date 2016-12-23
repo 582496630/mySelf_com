@@ -58,7 +58,7 @@ background-image:url(../img/1.jpg);
 	text-align: left;
 }
 
-.loginOKp {
+/* .loginOKp {
 	margin-top: 16%;
 	margin-left: 0%;
 	font-family: 华文行楷;
@@ -67,10 +67,20 @@ background-image:url(../img/1.jpg);
 	text-align: center;
 	color: red;
 	font-weight: bold;
+} */
+
+.loginOKm{
+	font-family: 华文行楷;
+	font-size: 40px;
+	font-weight: bold;
+	color: #09cdf7;
+	font-weight: bold;
 }
 
-
-
+.loginOKTable1{
+	
+	
+}
 
 
 

@@ -59,14 +59,22 @@
 			$("#pwdtd").append("请输入用户名与密码！")
 		</script>
 		
-<%
+			<% //计算当前用户登录数量,把用户名放到session中，用于监听器使用
+			
+			String userid= request.getParameter("username");
+			//userid  用于监听器里的销毁方法中
+			session.setAttribute("userid", userid);
+			%>
+		
+		
+<%-- <%
 //计算当前用户登录数量
 String userid= request.getParameter("username");
 if(!(userid ==null || "".equals(userid))){
 	session.setAttribute("userid", userid);
 	//response.sendRedirect("./OnlineUserList1_List.jsp");
 }
-%>
+%> --%>
 
 		<%-- 用jsp方式控制登陆的用户名与密码；现改为用servlet的方法
 		<%
