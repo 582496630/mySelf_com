@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.mysql.jdbc.PreparedStatement;
 import com.sun.corba.se.impl.oa.poa.ActiveObjectMap.Key;
 import com.sun.javafx.collections.MappingChange.Map;
 
@@ -28,6 +29,12 @@ import com.sun.javafx.collections.MappingChange.Map;
  */
 @WebServlet("/servlet/Login")
 public class Login extends HttpServlet {
+	
+	//声明所需的常量  驱动、数据库地址、用户名、密码
+	public static final String DBDRIVER = "com.mysql.jdbc.Driver";
+	public static final String DBURL ="jdbc:mysql://localhost:3306/db_one2";
+	public static final String DBUSER = "root";
+	public static final String DBPWD = "root";
 
 	private static final long serialVersionUID = 1L;
 
@@ -59,41 +66,43 @@ public class Login extends HttpServlet {
 
 		//连接数据库，取出数据库中的用户名与密码
 		TreeSet<String> setname = new TreeSet<String>();
-		
 		try {
-		      Connection connect = DriverManager.getConnection(
-		          "jdbc:mysql://localhost:3306/db_one2","root","root");
-		           //连接URL为   jdbc:mysql//服务器地址/数据库名  ，后面的2个参数分别是登陆用户名和密码
-
-		     // System.out.println("Success connect Mysql server!");
-		      Statement stmt = connect.createStatement();
-		      ResultSet rs = stmt.executeQuery("select * from 登陆账号");
-		                                                              //user 为你表的名称
-		while (rs.next()) {
-			setname.add(rs.getString("name")) ;
+			Class.forName(DBDRIVER);
+			Connection conn= DriverManager.getConnection(DBURL, DBUSER, DBPWD);
+			String sql = "select * from 登陆账号";
+			PreparedStatement prest = (PreparedStatement) conn.prepareStatement(sql);
+			ResultSet re = prest.executeQuery();
+			while(re.next()){
+				String username = re.getString("name");
+				String password = re.getString("password");
+				setname.add(username);
+				setname.add(password);
+				System.out.println(setname.size());
+			}
 			
-			
-		       // System.out.println(rs.getString("name"));
-		        //System.out.println(rs.getString("password"));
-		      }
-		    }
-		    catch (Exception e) {
-		      System.out.print("get data error!");
-		      e.printStackTrace();
-		    }
+			//关闭数据流，只有在IO与数据库时用到了关闭数据流
+			re.close();
+			prest.close();
+			conn.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//把set集合放到数组内
+		Object[] strarray = setname.toArray();
 		
 	
 		
-		String[] string = { "世俗", "周游","颜庆祥"};
+		//String[] string = { "世俗", "周游","颜庆祥"};
 		
 		int i = 0;
 		while (i < setname.size()) {
 
-			if (string[i].equals(name) && "123456".equals(pwd)) {
+			if (strarray[i].equals(name) && "123456".equals(pwd)) {
 
 				// if(string.equals(name)&&"123456".equals(pwd)){
-				ServletContext context = getServletContext();
-				RequestDispatcher rd = context.getRequestDispatcher("/login/login2.jsp");
+				//ServletContext context = getServletContext();运行无问题后可以删除 考试中发现
+				RequestDispatcher rd = request.getRequestDispatcher("/login/login2.jsp");
 				rd.forward(request, response);
 				return;
 
