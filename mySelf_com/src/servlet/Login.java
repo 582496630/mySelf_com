@@ -6,7 +6,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Map.Entry;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -65,7 +68,8 @@ public class Login extends HttpServlet {
 		session.setAttribute("userpwd", pwd);
 
 		//连接数据库，取出数据库中的用户名与密码
-		TreeSet<String> setname = new TreeSet<String>();
+		List<String>  strlist= new ArrayList<String>();
+		List<String>  strlist1= new ArrayList<String>();
 		try {
 			Class.forName(DBDRIVER);
 			Connection conn= DriverManager.getConnection(DBURL, DBUSER, DBPWD);
@@ -73,11 +77,11 @@ public class Login extends HttpServlet {
 			PreparedStatement prest = (PreparedStatement) conn.prepareStatement(sql);
 			ResultSet re = prest.executeQuery();
 			while(re.next()){
-				String username = re.getString("name");
-				String password = re.getString("password");
-				setname.add(username);
-				setname.add(password);
-				System.out.println(setname.size());
+				String username = re.getString(2);
+				String password = re.getString(3);
+				strlist.add(username);
+				strlist1.add(password);
+				System.out.println(strlist.size());
 			}
 			
 			//关闭数据流，只有在IO与数据库时用到了关闭数据流
@@ -89,17 +93,16 @@ public class Login extends HttpServlet {
 			e.printStackTrace();
 		}
 		//把set集合放到数组内
-		Object[] strarray = setname.toArray();
+		Object[] strarray = strlist.toArray();
+		Object[] strarray1 = strlist1.toArray();
 		
 	
 		
 		//String[] string = { "世俗", "周游","颜庆祥"};
 		
 		int i = 0;
-		while (i < setname.size()) {
-
-			if (strarray[i].equals(name) && "123456".equals(pwd)) {
-
+		while (i < strlist.size()) {
+			if (strarray[i].equals(name) && strarray1[i].equals(pwd)) {
 				// if(string.equals(name)&&"123456".equals(pwd)){
 				//ServletContext context = getServletContext();运行无问题后可以删除 考试中发现
 				RequestDispatcher rd = request.getRequestDispatcher("/login/login2.jsp");
